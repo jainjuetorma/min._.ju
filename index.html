@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classy Student Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for premium typography -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="calculator-container">
+        <!-- History Sidebar / Log -->
+        <div class="history-panel" id="historyPanel">
+            <div class="panel-header">
+                <span>Calculation History</span>
+                <button id="clearHistoryBtn" class="text-btn">Clear</button>
+            </div>
+            <div class="history-list" id="historyList">
+                <div class="empty-state">No history yet</div>
+            </div>
+        </div>
+
+        <!-- Main Interface -->
+        <div class="main-calc">
+            <!-- Mode / Feature Tabs -->
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="basic">Standard</button>
+                <button class="tab-btn" data-tab="scientific">Advanced</button>
+                <button class="tab-btn" data-tab="history">Log</button>
+            </div>
+
+            <!-- Premium Display Wrapper -->
+            <div class="display-container">
+                <div class="expression-line" id="expressionDisplay"></div>
+                <div class="result-line" id="resultDisplay">0</div>
+            </div>
+
+            <!-- Interactive Keyboard Matrix -->
+            <div class="keypad">
+                <!-- Row 1: Advanced Student Functions (Hidden by default in basic mode) -->
+                <button class="key func-key scientific-only" data-action="sin">sin</button>
+                <button class="key func-key scientific-only" data-action="cos">cos</button>
+                <button class="key func-key scientific-only" data-action="tan">tan</button>
+                <button class="key func-key scientific-only" data-action="log">log</button>
+                <button class="key func-key scientific-only" data-action="ln">ln</button>
+
+                <!-- Row 2: Standard Utilities -->
+                <button class="key func-key scientific-only" data-action="sqrt">√</button>
+                <button class="key func-key scientific-only" data-action="pow">xʸ</button>
+                <button class="key func-key scientific-only" data-action="pi">π</button>
+                <button class="key func-key" data-action="clear">AC</button>
+                <button class="key func-key" data-action="backspace">⌫</button>
+
+                <!-- Row 3: Math Operator Row -->
+                <button class="key func-key" data-action="parenthesis-open">(</button>
+                <button class="key func-key" data-action="parenthesis-close">)</button>
+                <button class="key func-key" data-action="percent">%</button>
+                <button class="key op-key" data-action="divide">÷</button>
+
+                <!-- Number Pad Rows -->
+                <button class="key num-key">7</button>
+                <button class="key num-key">8</button>
+                <button class="key num-key">9</button>
+                <button class="key op-key" data-action="multiply">×</button>
+
+                <button class="key num-key">4</button>
+                <button class="key num-key">5</button>
+                <button class="key num-key">6</button>
+                <button class="key op-key" data-action="subtract">−</button>
+
+                <button class="key num-key">1</button>
+                <button class="key num-key">2</button>
+                <button class="key num-key">3</button>
+                <button class="key op-key" data-action="add">+</button>
+
+                <button class="key num-key double-width">0</button>
+                <button class="key num-key">.</button>
+                <button class="key equals-key" id="equalsBtn">=</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
